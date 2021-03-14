@@ -1,9 +1,12 @@
 from django.db import models
 
+
 # Create your models here..
-def upload_image(instance,filename):
-    name , ext = filename.splite(".")
-    return  "job/%s.%s"%(instance.id,ext)
+def image_upload(instance, filename):
+    imagename, extension = filename.split(".")
+    return "blog/%s.%s" % (instance.id, extension)
+
+
 class Job(models.Model):
-    image=models.ImageField(upload_to=upload_image)
-    summary=models.CharField(max_length=200)
+    image = models.ImageField(upload_to=image_upload)
+    summary = models.CharField(max_length=200)

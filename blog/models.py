@@ -4,9 +4,10 @@ from django.db import models
 # Create your models here.
 
 
-def image_upload(self, filename):
-    imagename,exttantion = filename.split(".")
-    return "media/%S.%S"%(self.id, exttantion)
+def image_upload(instance, filename):
+    imagename, extension = filename.split(".")
+    return "blog/%s.%s" % (instance.id, extension)
+
 
 class post(models.Model):
     tittle = models.CharField(max_length=100)
@@ -17,5 +18,5 @@ class post(models.Model):
     def __str__(self):
         return self.tittle
 
-    def summry(self):
+    def summary(self):
         return self.body_text[:250]

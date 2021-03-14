@@ -1,5 +1,6 @@
 <!doctype html>
 {% load static %}
+{% load bootstrap4 %}
 <html lang="en">
 
   <head>
@@ -35,7 +36,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ml-auto">
-            <a class="nav-item nav-link" href="{% url 'linkedin.com/in/nader-sayed/'%}">Linked in</a>
+            <a class="nav-item nav-link" href= 'https://www.linkedin.com/in/nader-sayed/'>Linked in</a>
             <a class="nav-item nav-link" href="{% static 'Nader_Sayed_Rabea_cv.pdf' %}">Resume</a>
             <a class="nav-item nav-link active" href="{% url 'all_posts' %}">Blog</a>
           </div>
@@ -43,7 +44,7 @@
       </nav>
     </header>
 <main role="main">
-      {% block content %}{% endblock %}
+      {% block content %}{% endblock content %}
     </main>
 
     <footer class="text-muted">
