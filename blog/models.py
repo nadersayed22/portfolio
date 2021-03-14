@@ -6,7 +6,7 @@ from django.db import models
 
 def image_upload(self, filename):
     imagename,exttantion = filename.split(".")
-    return "media/%s.%s"%(self.id, exttantion)
+    return "media/%S.%S"%(self.id, exttantion)
 
 class post(models.Model):
     tittle = models.CharField(max_length=100)

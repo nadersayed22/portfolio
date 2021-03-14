@@ -1,10 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends  'base.html' %}
+{% block content %}
+    <main role="main">
+      <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">Hi, I'm Nader.</h1>
+          <p class="lead text-muted">Hey, my name is Nader Sayed and I adore everything about working with Django. If you need my help don't never ever hesitate just email me :D</p>
+          <p>
+            <a href="mailto:naderrabea22@gmail.com@gmail.com" class="btn btn-info my-2">Email Me</a>
+          </p>
+          <img class="rounded" src="{% static 'my_pic.png' %}" height="600" width="450"/>
+        </div>
+      </section>
+      <div class="album py-5 bg-light">
+        <div class="container">
+          <div class="row">
+            {% for job in jobs %}
+              <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                  <img class="card-img-top" src="{{ job.image.url }}" />
+                  <div class="card-body">
+                    <p class="card-text">{{ job.summary}}</p>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </main>
+{% endblock  %}

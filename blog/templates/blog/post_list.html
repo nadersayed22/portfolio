@@ -1,10 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html'%}
+{% block content %}
+  <div class="container">
+    <h1 class="text-center pt-3">Welcome to Nader's Blog</h1><br /><br />
+    <h2>Latest Posts</h2><hr />
 
-</body>
-</html>
+    {% for post in posts %}
+      <div class="card text-center border-info mb-3">
+        <div class="card-header">
+          <h5><a href="{% url 'detailed_post' post.id %}">{{ post.title }}</a></h5>
+        </div>
+        <div class="card-body" style="max-width: 1024px;">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                <img src="{{ post.image.url }}" class="card-img">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <p class="card-text">{{ post.summary }}</p>
+                </div>
+              </div>
+          </div>
+        </div>
+        <div class="card-footer text-muted">
+          {{ post.date_published|date:"F Y, d" }}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}
