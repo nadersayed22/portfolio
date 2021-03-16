@@ -1,4 +1,5 @@
 {% extends 'base.html'%}
+{% load static %}
 {% load bootstrap4 %}
 {% block content %}
   <div class="container">
@@ -8,7 +9,7 @@
     {% for post in posts %}
       <div class="card text-center border-info mb-3">
         <div class="card-header">
-          <h5><a href="{% url 'detailed_post' post.id %}">{{ post.title }}</a></h5>
+          <h5><a href="{% url 'detailed_post' post.slug %}">{{ post.tittle }}</a></h5>
         </div>
         <div class="card-body" style="max-width: 1024px;">
             <div class="row no-gutters">

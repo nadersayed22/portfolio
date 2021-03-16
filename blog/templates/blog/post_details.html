@@ -1,18 +1,28 @@
 {%  extends 'base.html' %}
+{% load static %}
 {% load bootstrap4 %}
 {% block content %}
+
+       <style>
+        .card-img-top {
+                      width: 100%;
+                      height: 35w;
+                      }
+</style>
+
 <div class="container">
     <h1 class="text-center pt-3">Welcome to Nader's Blog</h1><br /><br />
     <h2>{{post.tittle}}</h2>
     <div class="card text-center border-info mb-3">
         <div class="card-header">
-          <h5>{{ post.title }}</h5>
+          <h5>{{ post.tittle }}</h5>
         </div>
         <div class="card-body" style="max-width: 1024px;">
             <div class="row no-gutters">
               <div class="" >
-                  <div class="" >
-                <img src="{{ post.image.url }}" class="card-img pl-5" height="600" width="200">
+
+                  <div class="card-img-top" >
+                <img  src="{{ post.image.url }}" alt="Card image" height="600" width="600">
               </div>
                   <div class="col-md-24 pl-5">
                 <div class="card-body">
